@@ -1,6 +1,6 @@
-== What 2 Eat Tonight
+= What 2 Eat Tonight
 
-= The visual decision you have been waiting for
+== The visual decision you have been waiting for
 
 Please review and feel free to use this open source code as best suits your personal projects.
 
