@@ -45,6 +45,7 @@ body {
   left: -200px;
   padding: 0;
   transition: left 0.3s ease;
+  z-index: 50;
 }
 .menu-container:hover {
   left:0px;
