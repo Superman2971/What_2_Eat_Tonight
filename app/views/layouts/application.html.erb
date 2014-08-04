@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="wetApp">
 <head>
   <title>What2EatTonight</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,7 @@
   <div class="menu-container">
       <div class="col-xs-9 menu">Menu
         <ul>
-          <li>Sign In / Register</li>
+          <li><%=link_to "Sign In / Register", '#' %></li>
           <li>Logout</li>
           <li>Why?</li> <!-- place rollover reason for why to login -->
         </ul>
@@ -23,7 +23,7 @@
       <p>Comments?</p>
       </br>
       <ul>Testing Routes
-        <li><%= link_to "HOME", home_path %></li>
+        <li><%= link_to "HOME", root_path %></li>
         <li><%= link_to "HELP", help_path %></li>
         <li><%= link_to "ABOUT", about_path %></li>
       </ul>
