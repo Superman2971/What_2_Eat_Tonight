@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @Test = "Does this work!"
   end
 
   def help
