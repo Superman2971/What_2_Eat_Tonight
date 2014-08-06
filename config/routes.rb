@@ -1,5 +1,9 @@
 What2EatTonight::Application.routes.draw do
   
+  resource :session, only: [:new, :create, :destroy]
+
+  get "users/reactivate" => "users#reactivate", as: :reactivate_user
+
   get "users/" => "users#index", as: :users
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
@@ -19,7 +23,7 @@ What2EatTonight::Application.routes.draw do
 
   get "static_pages/yelp" => "static_pages#yelp", as: :data
 
-  root "static_pages#yelp"
+  root "users#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

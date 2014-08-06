@@ -37,6 +37,20 @@
     <div class="row">
       <div class="col-xs-12">IMAGERY WILL LIVE HERE
 
+
+        <!--- LOGIN TESTING -->
+         <% if current_user %>
+    Welcome, <%= current_user.name %>!
+    <%= link_to "Log out", session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_path %>
+    <%= link_to "Log in", new_session_path %>
+  <% end %>
+
+  <%= session[:user_id].inspect %>
+        <!-- END -->
+
+
         <%= yield %> <!-- NOTE THE YIELD!!! -->
         <h1> Test: <%= yield(:title) %> </h1>
       </div>
