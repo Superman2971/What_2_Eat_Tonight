@@ -6,4 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.new(:name => "Ian Goldfarb", :email => "goldfarb.ian@gmail.com")
+users = User.create([
+  {
+  name: "Ian Goldfarb",
+  email: "goldfarb.ian@gmail.com",
+  phone: "541-621-0655"
+  },
+  {
+  name: "John Cusack",
+  email: "Won't tell me",
+  phone: "911"
+  }
+  ])
+
+comments = Comment.create([
+  {
+  text: "First!"
+  },
+  {
+  text: "Second!"
+  },
+  {
+  text: "Third!"
+  }
+  ])

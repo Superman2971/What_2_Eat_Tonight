@@ -9,4 +9,11 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def yelp
+    parameters = { term: 'restaurant', limit: 1 }
+    @response = Yelp.client.search('San Francisco', parameters)
+    @data =  @response.to_json
+  end
+
+
 end

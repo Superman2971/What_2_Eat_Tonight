@@ -1,8 +1,27 @@
 What2EatTonight::Application.routes.draw do
+  
+  get "users/" => "users#index"
+  get "users/new" => "users#new"
+  post "users/" => "users#create"
+  get "users/:id/edit" => "users#edit"
+  patch "users/:id/edit" => "users#update"
+  get "users/:id" => "users#show"
+  delete "users/" => "users#destroy"
+
+  get "comments/" => "comments#index"
+  get "comments/new" => "comments#new"
+  post "comments/" => "comments#create"
+  get "comments/:id/edit" => "comments#edit"
+  patch "comments/:id/edit" => "comments#update"
+  get "comments/:id" => "comments#show"
+  delete "comments/" => "comments#destroy"
+
+
   get "static_pages/home", as: :home
   get "static_pages/help", as: :help
   get "static_pages/about", as: :about
   get "user" => "user", as: :user
+  get "static_pages/yelp" => "static_pages#yelp", as: :data
   root "static_pages#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
