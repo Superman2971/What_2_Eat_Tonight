@@ -1,12 +1,13 @@
 What2EatTonight::Application.routes.draw do
   
-  get "users/" => "users#index"
-  get "users/new" => "users#new"
-  post "users/" => "users#create"
-  get "users/:id/edit" => "users#edit"
-  patch "users/:id/edit" => "users#update"
-  get "users/:id" => "users#show"
-  delete "users/" => "users#destroy"
+  get "users/" => "users#index", as: :users
+  get "users/new" => "users#new", as: :new_user
+  post "users" => "users#create"
+  get "users/:id" => "users#show", as: :user
+  get "users/:id/edit" => "users#edit", as: :edit_user
+  put "users/:id" => "users#update"
+  patch "users/:id" => "users#update"
+  delete "users/:id" => "users#destroy"
 
   get "comments/" => "comments#index"
   get "comments/new" => "comments#new"
@@ -16,13 +17,9 @@ What2EatTonight::Application.routes.draw do
   get "comments/:id" => "comments#show"
   delete "comments/" => "comments#destroy"
 
-
-  get "static_pages/home", as: :home
-  get "static_pages/help", as: :help
-  get "static_pages/about", as: :about
-  get "user" => "user", as: :user
   get "static_pages/yelp" => "static_pages#yelp", as: :data
-  root "static_pages#home"
+
+  root "static_pages#yelp"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
