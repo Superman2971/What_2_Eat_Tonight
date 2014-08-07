@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+class YelpController < ApplicationController
 
   def yelp
     parameters = { term: 'restaurant', limit: 10 }

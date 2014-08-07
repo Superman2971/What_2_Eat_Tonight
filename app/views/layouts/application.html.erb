@@ -13,20 +13,15 @@
 
   <!-- MENU -->
   <div class="menu-container">
-      <div class="col-xs-9 menu">Menu
-        <ul>
-          <li><%=link_to "Sign In / Register", '#' %></li>
-          <li>Logout</li>
-          <li>Why?</li> <!-- place rollover reason for why to login -->
-        </ul>
-      </br>
-      <p>Comments?</p>
-      </br>
-      <ul>Testing Routes
-        <li><%= link_to "All Users", users_path %></li>
-        <li><%= link_to "New User", new_user_path %></li>
-      </ul>
-      <h2><%= link_to "HOME", data_path %></h2>
+      <div class="col-xs-9 menu">
+        <h1>MENU</h1>
+          <p><%=link_to "Log in", new_session_path if !current_user%></p>
+          <p><%=link_to "Register", new_user_path if !current_user%></p>
+          <p><%= link_to "Logout", session_path, method: :delete if current_user%></p>
+          </br>
+          <p>Why? = info here for why to sign in, maybe comments below too</p> <!-- place rollover reason for why to login -->
+      <!-- NOTE: I ADDED if current_user to test if this hides unless user is logged in -->
+      <h2><%= link_to "HOME", data_path if current_user%></h2>
       </div>
       <div class="col-xs-3 menu-hover"></div>
   </div>
@@ -35,8 +30,7 @@
   <div></div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12">IMAGERY WILL LIVE HERE
-
+      <div class="col-xs-12">
 
         <!--- LOGIN TESTING -->
          <% if current_user %>
@@ -50,9 +44,8 @@
   <%= session[:user_id].inspect %>
         <!-- END -->
 
-
         <%= yield %> <!-- NOTE THE YIELD!!! -->
-        <h1> Test: <%= yield(:title) %> </h1>
+
       </div>
     </div>
   </div>

@@ -2,8 +2,6 @@ What2EatTonight::Application.routes.draw do
   
   resource :session, only: [:new, :create, :destroy]
 
-  get "users/reactivate" => "users#reactivate", as: :reactivate_user
-
   get "users/" => "users#index", as: :users
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
@@ -13,15 +11,9 @@ What2EatTonight::Application.routes.draw do
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
 
-  get "comments/" => "comments#index"
-  get "comments/new" => "comments#new"
-  post "comments/" => "comments#create"
-  get "comments/:id/edit" => "comments#edit"
-  patch "comments/:id/edit" => "comments#update"
-  get "comments/:id" => "comments#show"
-  delete "comments/" => "comments#destroy"
+  resources :comments
 
-  get "static_pages/yelp" => "static_pages#yelp", as: :data
+  get "yelp/yelp" => "yelp#yelp", as: :data
 
   root "users#index"
 
