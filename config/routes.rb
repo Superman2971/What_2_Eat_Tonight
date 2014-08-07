@@ -11,6 +11,8 @@ What2EatTonight::Application.routes.draw do
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
 
+  get "session/forgot" => "sessions#forgot", as: :forgot
+
   resources :comments
 
   get "yelp/yelp" => "yelp#yelp", as: :data

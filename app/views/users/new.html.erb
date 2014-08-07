@@ -1,9 +1,46 @@
 <h1>Sign-up Page</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.text_field :name, placeholder: "Name Here..." %>
-  <%= f.text_field :email, placeholder: "Email Here..." %>
-  <%= f.password_field :password, placeholder: "Password Here..." %>
-  <%= f.password_field :password_confirmation, placeholder: "Same Here..." %>
-  <%= f.submit %>
+<div class="col-sm-6 col-sm-offset-3">
+
+<%= form_for @user, :html => {:class => "well well-lg"} do |f| %>
+
+  <!-- NAME FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.text_field :email, :class => "form-control input-lg", placeholder: "Name Here..." %>
+  </div>
+
+  <!-- EMAIL FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <%= f.text_field :email, :class => "form-control input-lg", placeholder: "Email Here..." %>
+  </div>
+
+  <!-- PASSWORD FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+      <%= f.password_field :password, :class => "form-control input-lg", placeholder: "Password Here..." %>
+  </div>
+
+  <!-- PASSWORD CONFIRMATION FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+      <%= f.password_field :password, :class => "form-control input-lg", placeholder: "Password Confirmation..." %>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="form-group">
+      <%= f.submit "Log in", :class => "btn btn-block btn-primary btn-lg"%>
+  </div>
+
+
 <% end %>
+
+</br>
+
+<div class="form-group">
+<p><%= link_to "Forgot Password?", forgot_path %></p>
+</div>
+
+
+</div>
