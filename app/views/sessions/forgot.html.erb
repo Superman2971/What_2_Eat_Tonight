@@ -1,6 +1,21 @@
 <h1>Request Password</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.text_field :email, placeholder: "Email Here..." %>
-  <%= f.submit "Email me my password"%>
+<div class="col-sm-6 col-sm-offset-3">
+
+<%= form_for @user, {url: session_path, html:{class: "well well-lg"}}  do |f| %>
+
+  <!-- EMAIL FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <%= f.text_field :email, :class => "form-control input-lg", placeholder: "Email Here..." %>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="form-group">
+      <%= f.submit "Email my Password", :class => "btn btn-block btn-primary btn-lg"%>
+    </button>
+  </div>
+
 <% end %>
+
+</div>
