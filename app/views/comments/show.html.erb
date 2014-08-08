@@ -1,1 +1,8 @@
-<!-- DELETE THIS PAGE AND STUFF
+<h1><%= Comment Show %></h1>
+
+<p><%= @comment.user.name %></p>
+<p><%= @comment.text %></p>
+
+<%= link_to "Show comment", edit_comment_path %>
+</br>
+<%= link_to "Back to Home", root_path %>

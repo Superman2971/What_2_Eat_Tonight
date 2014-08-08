@@ -8,5 +8,5 @@ class User
 
   has_secure_password
 
-  has_many :comment
+  has_many :comments
 end

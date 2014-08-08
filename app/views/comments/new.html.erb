@@ -3,8 +3,9 @@
 <% @comments.each do |c| %>
   <div>
     <div><%= c.text %></div>
-    <div><%= link_to "Edit", edit_comment_path %></div>
+    <div><%= link_to "Edit", edit_comment_path(c) %></div>
   </div>
+</br>
 <% end %>
 
 <%= form_for @comment do |f| %>
