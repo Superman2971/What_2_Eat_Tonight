@@ -12,10 +12,6 @@
 </head>
 <body ng-controller="wetController">
 
-  <!-- User Name -->
-  <h3 class= "user"><%= "#{current_user.name}" if current_user%></h3>
-  <h1><%= link_to "Go To The Comments Section", new_comment_path if current_user %></h1>
-
   <!-- MENU -->
   <div class="menu-container">
       <div class="col-xs-9 menu">
@@ -25,12 +21,16 @@
           <p><%=link_to "Register", new_user_path if !current_user%></p>
           <p><%= link_to "Logout", session_path, method: :delete if current_user%></p>
           </br>
-          <p>Why? = info here for why to sign in, maybe comments below too</p> <!-- place rollover reason for why to login -->
-      <!-- NOTE: I ADDED if current_user to test if this hides unless user is logged in -->
-      <h2><%= link_to "HOME", data_path if current_user%></h2>
+          <p>Why register today?</p>
+          <li>Access to our Comments Gallery!</li>
+      <h2><%= link_to "Yelp Stuff", data_path if current_user%></h2>
       </div>
       <div class="col-xs-3 menu-hover"></div>
   </div>
+
+  <!-- User Name -->
+  <h3 class= "user"><%= "#{current_user.name}" if current_user%></h3>
+  <h1><%= link_to "Go To The Comments Section", new_comment_path if current_user %></h1>
 
   <!-- IMAGES -->
   <div></div>
