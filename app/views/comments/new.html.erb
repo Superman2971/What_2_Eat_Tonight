@@ -1,20 +1,17 @@
-<h1>All of the comments</h1>
-
-<!-- Form to create a new comment -->
-<%= form_for @comment do |f| %>
-  <%= f.text_field :text, placeholder: "Text Here..." %>
-  <%= f.submit %>
-<% end %>
-
-<!-- Loop through and show all comments -->
-<% @comments.each do |c| %>
-  <div>
-    <div>User: <%= c.user.name %></div>
-    <div>Comment: <%= c.text %></div>
-    <!-- Edit link (only shown if you are the user that created it) -->
-    <div><%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></div>
+<div class="container">
+  <!-- Form to create a new comment -->
+  <%= form_for @comment, html:{class: "container"} do |f| %>
+  <fieldset class="inputs">
+    <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+  </fieldset>
+  <fieldset class="actions">
+    <%= f.submit "POST", class: "submit" %>
+  </fieldset>
+  <% end %>
+  <div class="post-container">
+    <% @comments.each do |c| %>
+    <div class="post"><h4><span><%= c.user.name %></span></h4><div class="pcontent">"<%= c.text %>"<sub class="time"><!-- Edit link (only shown if you are the user that created it) --><%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></sub></div><%= c.created_at.strftime("%I:%M%p, %b %d 20%y ") %></div>
+    <% end %>
   </div>
-</br>
-<% end %>
-
+</div>
 
