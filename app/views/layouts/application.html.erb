@@ -11,6 +11,9 @@
 </head>
 <body ng-controller="wetController">
 
+  <!-- User Name -->
+  <h3 class= "user"><%= "#{current_user.name}" if current_user%></h3>
+
   <!-- MENU -->
   <div class="menu-container">
       <div class="col-xs-9 menu">
