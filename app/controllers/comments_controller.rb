@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       redirect_to home_path
       return
     end
-    comment = Comment.new(params.require(:comment).permit(:text))
+    comment = current_user.comments.new(params.require(:comment).permit(:text))
     if comment.save
       redirect_to new_comment_path
     else
