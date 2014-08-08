@@ -2,6 +2,7 @@
 <html ng-app="wetApp">
 <head>
   <title>What2EatTonight</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta charset="utf-8">
   <meta name="description" content="Visual selection of what to eat tonight. A visual representation of food near you.">
@@ -13,6 +14,7 @@
 
   <!-- User Name -->
   <h3 class= "user"><%= "#{current_user.name}" if current_user%></h3>
+  <h2><%= link_to "Comments Section", new_comment_path if current_user %></h2>
 
   <!-- MENU -->
   <div class="menu-container">

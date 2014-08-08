@@ -1,2 +1,13 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h1>All of the comments</h1>
+
+<% @comments.each do |c| %>
+  <div>
+    <div><%= c.text %></div>
+    <div><%= link_to "Edit", edit_comment_path %></div>
+  </div>
+<% end %>
+
+<%= form_for @comment do |f| %>
+  <%= f.text_field :text, placeholder: "Text Here..." %>
+  <%= f.submit %>
+<% end %>

@@ -1,2 +1,14 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<h1><%= Comment Show %></h1>
+
+<p><%= @comment.user.name %></p>
+<p><%= @comment.text %></p>
+
+
+<%= form_for @comments do |c| %>
+  Text: <%= c.text_field :text %>
+
+  <%= d.submit "Submit Beast" %>
+
+<% end %>
+
+<%= link_to "Back to Home", new_comment_path %>

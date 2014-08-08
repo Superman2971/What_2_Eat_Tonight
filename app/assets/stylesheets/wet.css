@@ -115,3 +115,10 @@ body {
   position: fixed;
   right: 0;
 }
+
+.comments {
+  margin: 20px;
+  position: fixed;
+  right: 0;
+  top: 50px;
+}

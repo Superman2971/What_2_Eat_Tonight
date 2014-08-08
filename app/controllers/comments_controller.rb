@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comments = Comment.all
     @comment = Comment.new
   end
 
