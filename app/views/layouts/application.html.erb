@@ -23,14 +23,15 @@
           </br>
           <p>Why register today?</p>
           <li>Access to our Comments Gallery!</li>
+          <h2><%= link_to "Comments Gallery", new_comment_path if current_user%></h2>
       <h2><%= link_to "Yelp Stuff", data_path if current_user%></h2>
       </div>
       <div class="col-xs-3 menu-hover"></div>
   </div>
 
   <!-- User Name -->
-  <h3 class= "user"><%= "#{current_user.name}" if current_user%></h3>
-  <h1><%= link_to "Go To The Comments Section", new_comment_path if current_user %></h1>
+  <h3 class= "user pull-right"><%= "#{current_user.name}" if current_user%></h3><!-- 
+  <h1><%= link_to "Go To The Comments Section", new_comment_path if current_user %></h1> -->
 
   <!-- IMAGES -->
   <div></div>

@@ -93,28 +93,10 @@ body {
     margin: 0 10px 10px 0;
 }
 
-@media (max-width: 768px) {
-    #social-sign-in .icon-5x {
-        font-size: 7em;
-    }
-}
-@media (max-width: 480px) {
-    #social-sign-in .icon-5x {
-        font-size: 4.5em;
-    }
-}
-@media (min-width: 1199px) {
-    #social-sign-in .icon-5x {
-        font-size: 7em;
-    }
-}
-
 /* Username */
 
 .user {
   margin: 20px;
-  position: fixed;
-  right: 0;
 }
 
 
@@ -284,5 +266,14 @@ fieldset {
 }
 
 
+/* MEDIA QUERIES */
 
+@media all and (max-width: 720px){
+  .container{
+    width: 400px;
+  }
+  .text-box{
+    width: 350px;
+  }
+}
 

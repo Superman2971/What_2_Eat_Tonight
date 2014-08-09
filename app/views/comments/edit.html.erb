@@ -2,14 +2,17 @@
 
 <p><%= @comment.text %></p>
 
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for @comment, html:{class: "well well-lg"} do |c| %>
+    <%= c.text_field :text, class: "form-control input-lg" %>
 
-<%= form_for @comment do |c| %>
-  Text: <%= c.text_field :text %>
+    <%= c.submit "Submit Beast", class: "btn btn-block btn-primary btn-lg" %>
 
-  <%= c.submit "Submit Beast" %>
+  <% end %>
 
-<% end %>
+  <button class="btn btn-danger">
+    <%= link_to "Delete", comment_path(@comment), method: :delete %>
+  </button>
 
-<%= button_to "Delete", comment_path(@comment), method: :delete %>
-
-<%= link_to "Back to Comments", new_comment_path %>
+  <%= link_to "Back to Comments", new_comment_path %>
+</div>
