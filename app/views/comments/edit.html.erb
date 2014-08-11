@@ -1,12 +1,12 @@
 <h1>Edit your Comment</h1>
 
-<p><%= @comment.text %></p>
+<p><%= "\"#{@comment.text}\"" %></p>
 
 <div class="col-md-6 col-md-offset-3">
   <%= form_for @comment, html:{class: "well well-lg"} do |c| %>
     <%= c.text_field :text, class: "form-control input-lg" %>
 
-    <%= c.submit "Submit Beast", class: "btn btn-block btn-primary btn-lg" %>
+    <%= c.submit "Submit Changes", class: "btn btn-block btn-primary btn-lg" %>
 
   <% end %>
 

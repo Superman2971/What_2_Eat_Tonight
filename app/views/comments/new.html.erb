@@ -1,19 +1,44 @@
 <div class="col-md-6 col-md-offset-3">
-  <!-- Form to create a new comment -->
   <div>
-    <%= form_for @comment, html:{class: "container"} do |f| %>
-    <fieldset class="inputs">
-      <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
-    </fieldset>
-    <fieldset class="actions">
-      <%= f.submit "POST", class: "submit" %>
-    </fieldset>
-    <% end %>
+      <!-- New Comment Modal Button -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Add Comment
+</button>
+
+<!-- New Comment Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+<!--       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div> -->
+      <!-- <div class="modal-body"> -->
+        <%= form_for @comment, html:{class: "container"} do |f| %>
+        <fieldset class="inputs">
+          <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+        </fieldset>
+        <fieldset class="actions">
+          <%= f.submit "POST", class: "submit" %>
+        </fieldset>
+        <% end %>
+      <!-- </div> -->
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- End of New Comment Modal -->
+
   </div>
   <!-- List of all the comments -->
   <div class="post-container">
     <% @comments.reverse.each do |c| %>
-    <div class="post"><h4><span><%= c.user.name %></span></h4><div class="pcontent">"<%= c.text %>"<sub class="time"><!-- Edit link (only shown if you are the user that created it) --><%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></sub></div><%= c.created_at.strftime("%I:%M%p, %b %d 20%y ") %></div>
+    <div class="post"><h4><span><%= c.user.name %></span></h4><div class="pcontent">"<%= c.text %>"<sub class="time">
+      <!-- Edit link (only shown if you are the user that created it) -->
+      <%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></sub></div><%= c.created_at.strftime("%I:%M%p, %b %d 20%y ") %></div>
     <% end %>
   </div>
 </div>
