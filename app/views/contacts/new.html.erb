@@ -9,6 +9,9 @@
     <div class= "hidden">
       <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
+    <div class= "hidden">
+      <%= f.text_field :message, :value => 'Please use the following link to change your password: http://www.google.com %(#{email})' %>
+    </div>
     <div class="form-group">
       </br>
       <%= f.button :submit, 'Send message', :class=> "btn btn-block btn-primary btn-lg" %>

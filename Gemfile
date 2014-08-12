@@ -10,7 +10,7 @@ gem 'mongoid'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap-glyphicons'
 
-#Adding Yelp
+#Don't need Yelp, only provided 100x100 images
 gem 'yelp', require: 'yelp'
 
 group :development, :test do
@@ -69,3 +69,7 @@ end
 # Added for Mailer
 gem 'mail_form'
 gem 'simple_form'
+
+# Added for scraping
+gem 'nokogiri'
+# gem 'mechanize' # didn't need

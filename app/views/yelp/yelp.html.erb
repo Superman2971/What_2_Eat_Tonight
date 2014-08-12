@@ -1,8 +1,10 @@
 <h1>Yelp Content</h1>
 <div class="container">
   <div class="row">
-    <% (1..5).each do |x| %>
-      <p><%=  image_tag @response.businesses[x].image_url %></p>
-    <% end %>
+    <div class="col-xs-12 inline">
+      <% (1..9).each do |x| %>
+        <div class="inline"><%=  image_tag @response.businesses[x].image_url %></div>
+      <% end %>
+    </div>
   </div>
-  </div>
+</div>

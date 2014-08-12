@@ -5,12 +5,16 @@ What2EatTonight::Application.routes.draw do
   get "users/" => "users#index", as: :users
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
+  get "users/edit" => "users#edit"
+  post "users/update" => "users#update"
+  post "users/show" => "users#show"
 
   get "session/forgot" => "sessions#forgot", as: :forgot
 
   resources :comments
 
-  get "yelp/yelp" => "yelp#yelp", as: :data
+  get "yelp/index" => "yelp#index"
+  get "yelp/yelp" => "yelp#yelp", as: :data # No longer need, Yelp sucks
 
   root "users#index"
 

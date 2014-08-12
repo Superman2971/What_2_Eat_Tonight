@@ -24,7 +24,8 @@
           <p><%= "Why register today?" if !current_user %></p>
           <p><%= "Access to our Comments Gallery!" if !current_user %></p>
           <h2><%= link_to "Comments Gallery", new_comment_path if current_user%></h2>
-      <h2><%= link_to "Yelp Stuff", data_path if current_user%></h2>
+      <h2><%= link_to "Yelp Scraper", yelp_index_path if current_user%></h2>
+       <h2><%= link_to "Yelp API", data_path if current_user%></h2>
       </div>
       <div class="col-xs-3 menu-hover"></div>
   </div>

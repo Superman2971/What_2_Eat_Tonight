@@ -190,6 +190,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   mongoid
+  nokogiri
   pg (= 0.15.1)
   rails (= 4.0.4)
   rails_12factor
