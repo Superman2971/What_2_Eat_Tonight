@@ -1,6 +1,23 @@
 What2EatTonight::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # EMAILER CONFIG
+  config.action_mailer.default_url_options = { :host => 'w2et.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "gmail.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: "whattoeattonight@gmail.com"],
+  password: "givemefood"
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
