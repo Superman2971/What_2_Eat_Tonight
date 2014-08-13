@@ -72,4 +72,4 @@ gem 'simple_form'
 
 # Added for scraping
 gem 'nokogiri'
-# gem 'mechanize' # didn't need
+gem 'mechanize'

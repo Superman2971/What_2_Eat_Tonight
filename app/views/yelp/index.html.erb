@@ -1,4 +1,12 @@
+<% count = 0 %>
 <% @small_images.each do |h| %>
-  <p><% h.attr('src') %></p>
-  <img src=<%=h.attr('src')%> />
+  <img class="inline" src=<%=h.attr("src")%> />
+  <% @addresses[count].text %>
+  <% count += 1 %>
+<% end %>
+
+<% @images.each do |page_pics| %>
+  <% page_pics.each do |pic_src| %>
+  <img class="inline" src=<%= pic_src.attr("src") %> />
+  <% end %>
 <% end %>
