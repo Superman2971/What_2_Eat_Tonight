@@ -5,4 +5,5 @@ class Comment
   field :text, type: String
   
   belongs_to :user
+
 end

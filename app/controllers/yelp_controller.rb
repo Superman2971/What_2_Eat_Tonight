@@ -2,7 +2,6 @@ class YelpController < ApplicationController
 require "nokogiri"
 require "mechanize"
 require "open-uri"
-require "watir-webdriver"
 
   def index
     # create a mechanize instant
