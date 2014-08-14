@@ -13,10 +13,12 @@ What2EatTonight::Application.routes.draw do
 
   resources :comments
 
+  resource :images
+
   get "yelp/index" => "yelp#index"
   get "yelp/yelp" => "yelp#yelp", as: :data # No longer need, Yelp sucks
 
-  root "users#index"
+  root "images#show"
 
   #Mailer Stuff
   match '/contacts', to: 'contacts#new', via: 'get'

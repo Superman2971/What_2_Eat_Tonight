@@ -1,0 +1,31 @@
+<div id="background-carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image:url(http://placehold.it/1600x800/)"></div>
+        <% @images.each do |i| %>
+          <div class="item" style="background-image:url(
+          <%= i.image.url %>)"></div>
+        <% end %> 
+      </div>
+    </div>
+</div>
+
+<div class="col-xs-4 col-xs-offset-4">
+  <% @images.each do |i| %>
+    <div data-toggle="modal" data-target=".bs-example-modal-sm"><%= i.image.url %></div>
+
+          <p><% @resto = i.restaurant %></p>
+          <p><% @local = i.location %></p>
+
+  <% end %>
+</div>
+
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <p><%= @resto %></p>
+          <p><%= @local %></p>
+        </div>
+      </div>
+    </div>

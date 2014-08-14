@@ -19,4 +19,5 @@ class User
   validates :password, length: { minimum: 6 }
 
   has_many :comments
+  has_many :images
 end

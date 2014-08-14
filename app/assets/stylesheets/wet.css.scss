@@ -26,11 +26,10 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333333;
   font-size: 20px;
 }
 body {
-  color: #ffffff;
+  color: #222; /* CHANGE COLOR BACK LATER */
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -313,4 +312,39 @@ background-color: #dff0d8;
 border-color: #d6e9c6;
 color: #468847;
 text-align: left;
+}
+
+/* For BG Carousel */
+
+html,body {
+  height:100%;
+  width:100%;
+  position:relative;
+}
+#background-carousel{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+.carousel,
+.carousel-inner {
+  width:100%;
+  height:100%;
+  z-index:0;
+  overflow:hidden;
+}
+.item {
+  width:100%;
+  height:100%;
+  background-position:center center;
+  background-size:cover;
+  z-index:0;
+}
+
+#content-wrapper {
+  position:absolute;
+  z-index:1 !important;
+  min-width:100%;
+  min-height:100%;
 }

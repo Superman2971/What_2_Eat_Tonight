@@ -1,0 +1,11 @@
+<div class="col-xs-4 col-xs-offset-4">
+  <%= form_for @image, {url: images_path(@image)} do |f| %>
+    <label for="restaurant">Restaurant:</label>
+    <%= f.text_field :restaurant %><br/>
+    <label for="location">Location:</label>
+    <%= f.text_field :location %><br/>
+    <label for="image">Image:</label>
+    <%= f.file_field :image %><br/>
+    <%= f.submit "Upload" %>
+  <% end %>
+</div>

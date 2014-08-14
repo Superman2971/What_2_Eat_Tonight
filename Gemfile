@@ -73,3 +73,7 @@ gem 'simple_form'
 # Added for scraping
 gem 'nokogiri'
 gem 'mechanize'
+
+# Added for Picture Upload
+gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
+# gem "aws-s3", :require => "aws/s3"
