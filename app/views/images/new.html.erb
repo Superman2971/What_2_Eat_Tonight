@@ -1,11 +1,41 @@
-<div class="col-xs-4 col-xs-offset-4">
-  <%= form_for @image, {url: images_path(@image)} do |f| %>
-    <label for="restaurant">Restaurant:</label>
-    <%= f.text_field :restaurant %><br/>
-    <label for="location">Location:</label>
-    <%= f.text_field :location %><br/>
-    <label for="image">Image:</label>
-    <%= f.file_field :image %><br/>
-    <%= f.submit "Upload" %>
-  <% end %>
+<div class="col-sm-6 col-sm-offset-3">
+
+<h1>Add Food Image to Our Site</h1>
+
+<%= form_for @image, {url: images_path(@image), html:{class: "well well-lg"}}  do |f| %>
+
+  <!-- RESTAURANT FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+      <%= f.text_field :restaurant, :class => "form-control input-lg", placeholder: "Restaurant Name..." %>
+  </div>
+
+  <!-- LOCATION FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+      <%= f.text_field :location, :class => "form-control input-lg", placeholder: "Restaurant Address..." %>
+  </div>
+
+  <!-- IMAGE FILE FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+      <%= f.file_field :image %>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="form-group">
+      <%= f.submit "Upload Image", :class => "btn btn-block btn-primary btn-lg"%>
+    </button>
+  </div>
+
+
+<% end %>
+
+</br>
+
+<div class="form-group">
+<p><%= link_to "Forgot Password?", contacts_path %></p>
+</div>
+
+
 </div>

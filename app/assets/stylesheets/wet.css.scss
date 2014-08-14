@@ -29,9 +29,10 @@ body {
   font-size: 20px;
 }
 body {
-  color: #222; /* CHANGE COLOR BACK LATER */
+  color: #ffffff; /* CHANGE COLOR BACK LATER */
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  z-index: 1;
 }
 
 
@@ -104,7 +105,9 @@ body {
   display: inline-block;
 }
 
-
+.logo {
+  width: 150px;
+}
 
 
 
@@ -340,6 +343,7 @@ html,body {
   background-position:center center;
   background-size:cover;
   z-index:0;
+  cursor: pointer;
 }
 
 #content-wrapper {
