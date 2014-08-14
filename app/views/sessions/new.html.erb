@@ -3,17 +3,31 @@
 <div class="col-sm-6 col-sm-offset-3">
 
 <%= form_for @user, {url: session_path, html:{class: "well well-lg"}}  do |f| %>
+  
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> with your Log In attempt:
+      </h2>
+
+      <ul class="list-group">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="list-group-item list-group-item-danger"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <!-- EMAIL FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.text_field :email, :class => "form-control input-lg", placeholder: "Email Here..." %>
+      <%= f.text_field :email, required:true, :class => "form-control input-lg", placeholder: "Email Here..." %>
   </div>
 
   <!-- PASSWORD FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.password_field :password, :class => "form-control input-lg", placeholder: "Password Here..." %>
+      <%= f.password_field :password, required:true, :class => "form-control input-lg", placeholder: "Password Here..." %>
   </div>
 
   <!-- SUBMIT BUTTON -->

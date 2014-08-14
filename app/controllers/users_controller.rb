@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = u.id.to_s
       redirect_to root_path
     else
-      redirect_to new_user_path
+      render 'new'
     end
   end
 

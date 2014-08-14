@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
       redirect_to root_path
       return
     end
-    image = current_user.images.new(params.require(:image).permit(:restaurant, :location, :image))
+    image = current_user.images.new(params.require(:image).permit(:cuisine, :restaurant, :location, :image))
     if image.save
       redirect_to root_path
     else

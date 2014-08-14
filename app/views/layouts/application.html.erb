@@ -12,37 +12,17 @@
 </head>
 <body ng-controller="wetController">
 
-  <!-- MENU -->
-  <div class="menu-container">
-      <div class="col-xs-9 menu">
-        <%= link_to image_tag("WE2T_logo.png", class: "logo"), root_path %>
-        <h1>MENU</h1>
-          <p><%= "Welcome, #{current_user.name}!" if current_user%></p>
-          <p><%=link_to "Log in", new_session_path if !current_user%></p>
-          <p><%=link_to "Register", new_user_path if !current_user%></p>
-          <p><%= link_to "Logout", session_path, method: :delete if current_user%></p>
-          </br>
-          <p><%= "Why register today?" if !current_user %></p>
-          <p><%= "Access to our Comments Gallery!" if !current_user %></p>
-          <p><%= "Ability to add your own restaurant food pics!" if !current_user %></p>
-          <h2><%= link_to "Comments Gallery", new_comment_path if current_user%></h2>
-          <h2><%= link_to "Add an New Image to Our Site", new_images_path if current_user%></h2>
-      <h2><%= link_to "Yelp Scraper", yelp_index_path if current_user%></h2>
-       <h2><%= link_to "Yelp API", data_path if current_user%></h2>
-      </div>
-      <div class="col-xs-3 menu-hover"></div>
-  </div>
+  <%= render 'layouts/menu' %>
 
   <!-- User Name -->
-  <h3 class= "user pull-right"><%= "#{current_user.name}" if current_user%></h3><!-- 
-  <h1><%= link_to "Go To The Comments Section", new_comment_path if current_user %></h1> -->
+  <h3 class= "user pull-right"><%= "#{current_user.name}" if current_user%></h3>
 
-  <!-- IMAGES -->
+  <!-- IMAGES/FORMS YIELD -->
   <div></div>
   <div class="container-fluid">
     <div class="row">
 
-        <%= yield %> <!-- NOTE THE YIELD!!! -->
+        <%= yield %>
 
 
     </div>

@@ -4,22 +4,42 @@
 
 <%= form_for @image, {url: images_path(@image), html:{class: "well well-lg"}}  do |f| %>
 
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:
+      </h2>
+
+      <ul class="list-group">
+      <% @image.errors.full_messages.each do |msg| %>
+        <li class="list-group-item list-group-item-danger"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- CUISINE FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+      <%= f.text_field :cuisine, required:true, :class => "form-control input-lg", placeholder: "Cuisine Type..." %>
+  </div>
+
   <!-- RESTAURANT FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-      <%= f.text_field :restaurant, :class => "form-control input-lg", placeholder: "Restaurant Name..." %>
+      <%= f.text_field :restaurant, required:true, :class => "form-control input-lg", placeholder: "Restaurant Name..." %>
   </div>
 
   <!-- LOCATION FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-      <%= f.text_field :location, :class => "form-control input-lg", placeholder: "Restaurant Address..." %>
+      <%= f.text_field :location, required:true, :class => "form-control input-lg", placeholder: "Restaurant Address..." %>
   </div>
 
   <!-- IMAGE FILE FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.file_field :image %>
+      <%= f.file_field :image, required:true %>
   </div>
 
   <!-- SUBMIT BUTTON -->

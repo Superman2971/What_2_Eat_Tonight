@@ -4,28 +4,42 @@
 
 <%= form_for @user, html:{class: "well well-lg"} do |f| %>
 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited your registration:
+      </h2>
+
+      <ul class="list-group">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="list-group-item list-group-item-danger"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <!-- NAME FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Name Here..." %>
+      <%= f.text_field :name, required:true, class: "form-control input-lg", placeholder: "Name Here..." %>
   </div>
 
   <!-- EMAIL FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.text_field :email, class: "form-control input-lg", placeholder: "Email Here..." %>
+      <%= f.text_field :email, required:true, class: "form-control input-lg", placeholder: "Email Here..." %>
   </div>
 
   <!-- PASSWORD FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password Here..." %>
+      <%= f.password_field :password, required:true, class: "form-control input-lg", placeholder: "Password Here..." %>
   </div>
 
   <!-- PASSWORD CONFIRMATION FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.password_field :password_confirmation, class: "form-control input-lg", placeholder: "Password Confirmation..." %>
+      <%= f.password_field :password_confirmation, required:true, class: "form-control input-lg", placeholder: "Password Confirmation..." %>
   </div>
 
   <!-- SUBMIT BUTTON -->

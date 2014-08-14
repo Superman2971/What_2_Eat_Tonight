@@ -16,7 +16,7 @@
       <!-- <div class="modal-body"> -->
         <%= form_for @comment, html:{class: "container"} do |f| %>
         <fieldset class="inputs">
-          <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+          <%= f.text_field :text, required:true, class: "text-box", placeholder: "Say Something..." %>
         </fieldset>
         <fieldset class="actions">
           <%= f.submit "POST", class: "submit" %>

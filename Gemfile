@@ -30,7 +30,7 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+# gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -76,4 +76,9 @@ gem 'mechanize'
 
 # Added for Picture Upload
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
-# gem "aws-s3", :require => "aws/s3"
+# gem "aws-s3", :require => "aws/s3" # Don't need Amazon...yet
+
+#Added for Pagination
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+

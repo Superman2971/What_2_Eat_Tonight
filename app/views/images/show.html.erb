@@ -4,7 +4,7 @@
         <div class="item active" style="background-image:url(<%= asset_path "homepage.jpg" %>)"></div>
         <% @images.shuffle.each do |i| %>
           <div class="item" style="background-image:url(
-          <%= i.image.url %>)" ng-click="modal('<%= i.restaurant %>', '<%= i.location %>', '<%= i.user.name %>')"></div>
+          <%= i.image.url %>)" ng-click="modal('<%= i.cuisine %>', '<%= i.restaurant %>', '<%= i.location %>', '<%= i.user.name %>')"></div>
         <% end %> 
       </div>
     </div>
