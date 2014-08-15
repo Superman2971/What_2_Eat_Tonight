@@ -13,11 +13,6 @@ gem 'bootstrap-glyphicons'
 #Don't need Yelp, only provided 100x100 images
 gem 'yelp', require: 'yelp'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails'
-end
-
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara'
