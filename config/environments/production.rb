@@ -14,7 +14,7 @@ What2EatTonight::Application.configure do
   domain: "gmail.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: "whattoeattonight@gmail.com"],
+  user_name: "whattoeattonight@gmail.com",
   password: "givemefood"
   }
 
