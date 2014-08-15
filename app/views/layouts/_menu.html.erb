@@ -1,7 +1,7 @@
 <!-- MENU -->
   <div class="menu-container">
       <div class="col-xs-9 menu">
-        <%= link_to image_tag("WE2T_logo.png", class: "logo"), root_path %>
+        <%= link_to image_tag("WE2T_logo.png", class: "logo"), root_path, method: :get %>
         <h1>MENU</h1>
           <p><%= "Welcome, #{current_user.name}!" if current_user%></p>
           <p><%=link_to "Log in", new_session_path if !current_user%></p>
@@ -16,5 +16,10 @@
       <h2><%= link_to "Yelp Scraper", yelp_index_path if current_user%></h2>
        <h2><%= link_to "Yelp API", data_path if current_user%></h2>
       </div>
-      <div class="col-xs-3 menu-hover"></div>
+      <div class="col-xs-3 menu-hover">
+      </br>
+        <button type="button" class="btn btn-default pull-left visible-xs">
+          <span class="glyphicon glyphicon-th-large"></span>
+        </button>
+      </div>
   </div>

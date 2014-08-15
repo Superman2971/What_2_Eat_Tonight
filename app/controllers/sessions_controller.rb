@@ -13,7 +13,12 @@ class SessionsController < ApplicationController
       #indicating that they are logged in
       session[:user_id] = u.id.to_s
       redirect_to root_path
-    else
+    elsif u == nil
+      flash[:error]="Email and Password do not match our database"
+      #go back to the login page
+      redirect_to new_session_path
+    elsif u && !u.authenticate(params[:user][:password])
+      flash[:error]="Password does not match our database"
       #go back to the login page
       redirect_to new_session_path
     end

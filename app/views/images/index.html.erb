@@ -1,0 +1,42 @@
+<div id="background-carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image:url(<%= asset_path "homepage.jpg" %>)"></div>
+        <% @images.shuffle.each do |i| %>
+          <div class="item" style="background-image:url(
+          <%= i.image.url %>)" ng-click="modal('<%= i.cuisine %>', '<%= i.restaurant %>', '<%= i.location %>', '<%= i.user.name %>')" data-toggle="modal" data-target="#myModal"></div>
+        <% end %> 
+      </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Looks like you should get some FUCKING {{cuisine}} tonight</h4>
+      </div>
+      <div class="modal-body">
+        <div>{{restaurant}}</div>
+        <div class="map-wrapper">
+          <div id="map-canvas"></div>
+        </div>
+        <div>
+          <input id="address" type="textbox">
+          <input type="button" value="Encode" ng-click="codeAddress()">
+        </div>
+
+        <div>{{location}}</div>
+        <div>This image was contributed by: {{user}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fuck this Food</button>
+        <button type="button" class="btn btn-primary">Email me Location</button>
+      </div>
+    </div>
+  </div>
+</div>

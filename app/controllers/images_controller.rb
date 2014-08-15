@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   
-  def show
+  def index
     @images = Image.all
   end
 
@@ -9,7 +9,6 @@ class ImagesController < ApplicationController
       redirect_to root_path
       return
     end
-    @images = Image.all
     @image = Image.new
   end
 
