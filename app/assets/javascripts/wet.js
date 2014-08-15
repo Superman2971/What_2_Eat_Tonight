@@ -1,6 +1,6 @@
 var wetApp = angular.module("wetApp",[]);
 
-wetApp.controller("wetController",function($scope){
+wetApp.controller("wetController",["$scope", function($scope){
 
   $scope.modal = function(cuisine, restaurant, location, user){
     $scope.cuisine = cuisine;
@@ -44,4 +44,4 @@ wetApp.controller("wetController",function($scope){
   google.maps.event.addDomListener(window, 'load', initialize);
 
 
-});
+}]);
