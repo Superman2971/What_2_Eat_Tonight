@@ -64,7 +64,6 @@ gem 'bcrypt'
 
 gem 'rails_12factor'
 
-
 # Added for Mailer
 gem 'mail_form'
 gem 'simple_form'
