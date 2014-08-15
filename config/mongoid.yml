@@ -70,4 +70,4 @@ test:
 production:
   sessions:
     default:
-      uri: 'mongodb://heroku:upumAX_3IVkaY97JJQUu6VH4d9rNczySVS86jyQlt03oMHc8CJKWT0oSfe3Tc_xSvrz5u15rR7KOEznXRk1k7w@kahana.mongohq.com:10036/app28504359'
+      uri: '<%= ENV['MONGOHQ_URL'] %>'
