@@ -73,5 +73,7 @@ gem 'nokogiri'
 gem 'mechanize'
 
 # Added for Picture Upload
+gem 'paperclip'
+gem 'aws-sdk'
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
 # gem "aws-s3", :require => "aws/s3" # Don't need Amazon...yet

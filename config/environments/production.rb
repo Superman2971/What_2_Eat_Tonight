@@ -94,4 +94,14 @@ What2EatTonight::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # FOR PAPERCLIP AND AWS
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['w2et'],
+    :access_key_id => ENV['AKIAJ3T7F5UGSZFIXPFQ'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
