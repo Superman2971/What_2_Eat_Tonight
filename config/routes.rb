@@ -6,7 +6,7 @@ What2EatTonight::Application.routes.draw do
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
   get "users/edit/:id" => "users#edit", as: :users_edit
-  post "users/update" => "users#update"
+  patch "users/update" => "users#update"
   post "users/show" => "users#show"
 
   resources :comments
