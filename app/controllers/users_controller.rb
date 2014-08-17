@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params.require(:user).permit(:password, :password_confirmation))
       redirect_to root_path
     else
-      redirect_to root_path
+      render 'edit'
     end
   end
 
