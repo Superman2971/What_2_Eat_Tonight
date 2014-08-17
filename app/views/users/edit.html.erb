@@ -3,18 +3,8 @@
 <div class="col-sm-6 col-sm-offset-3">
 
 <%= form_for @user, html:{class: "well well-lg"} do |f| %>
-
-  <!-- NAME FIELD -->
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <%= f.text_field :name, class: "form-control input-lg", value: f.name %>
-  </div>
-
-  <!-- EMAIL FIELD -->
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.text_field :email, class: "form-control input-lg", value: f.email %>
-  </div>
+  
+  <h1>PASSWORD CHANGE for: <%=@user.name%></h1>
 
   <!-- PASSWORD FIELD -->
   <div class="input-group">

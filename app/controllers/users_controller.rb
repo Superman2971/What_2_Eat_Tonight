@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     if @user.save
       u = User.where(email: params[:user][:email]).first
       session[:user_id] = u.id.to_s
+      # Tell the UserMailer to send email linking to edit password page
+      UserMailer.forgot_password(@user).deliver
       redirect_to root_path
     else
       render 'new'
@@ -20,12 +22,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id.email])
+    @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params.require(:user).permit(:password, :password_confirmation))
+    if @user.update_attributes(params.require(:user).permit(:name, :email, :password, :password_confirmation))
       redirect_to root_path
     else
       render 'edit'

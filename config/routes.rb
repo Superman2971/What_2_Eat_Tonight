@@ -2,14 +2,12 @@ What2EatTonight::Application.routes.draw do
   
   resource :session, only: [:new, :create, :destroy]
 
-  get "users/" => "users#index", as: :users
+  get "users/" => "users#index", as: :user
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
-  get "users/edit" => "users#edit"
+  get "users/edit/:id" => "users#edit", as: :users_edit
   post "users/update" => "users#update"
   post "users/show" => "users#show"
-
-  get "session/forgot" => "sessions#forgot", as: :forgot
 
   resources :comments
 

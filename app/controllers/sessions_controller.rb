@@ -29,14 +29,4 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def forgot
-    @user = User.new
-    # user = User.where(email: params[:user][:email])
-    # if user.save
-    #   redirect_to root_path
-    # else
-    #   flash[:notice] = "we do not have that email on record"
-    #   redirect_to new_user_path
-    # end
-  end
 end
