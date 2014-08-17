@@ -14,9 +14,6 @@ What2EatTonight::Application.routes.draw do
   resource :images
   post "images/" => "images#email", as: :email
 
-  get "yelp/index" => "yelp#index"
-  get "yelp/yelp" => "yelp#yelp", as: :data # No longer need, Yelp sucks
-
   root "images#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
