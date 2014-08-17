@@ -111,8 +111,8 @@ body {
 
 /* Overflow for Comments */
 #overflow {
-  overflow-y: auto;
-  height: 300px;
+  // overflow-y: scroll;
+  // height: 300px;
 }
 
 /* Google Map */
@@ -120,6 +120,15 @@ body {
   height: 300px;
   width: 300px;
   margin: 0 auto;
+}
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 400px){
+  #map-canvas{
+  height: 200px;
+  width: 200px;
+  }
 }
 
 /* Black Text */

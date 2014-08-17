@@ -1,35 +1,39 @@
-<div class="col-md-6 col-md-offset-3">
-  <div>
-      <!-- New Comment Modal Button -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Comment
-</button>
+<div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+  </br>
+  <!-- New Comment Modal Button -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add Comment
+  </button>
 
-<!-- New Comment Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- <div class="modal-body"> -->
-        <%= form_for @comment, html:{class: "container"} do |f| %>
-        <fieldset class="inputs">
-          <%= f.text_field :text, required:true, class: "text-box", placeholder: "Say Something..." %>
-        </fieldset>
-        <fieldset class="actions">
-          <%= f.submit "POST", class: "submit" %>
-        </fieldset>
-        <% end %>
+  <!-- New Comment Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- <div class="modal-body"> -->
+          <%= form_for @comment, html:{class: "container"} do |f| %>
+          <fieldset class="inputs">
+            <%= f.text_field :text, required:true, class: "text-box", placeholder: "Say Something..." %>
+          </fieldset>
+          <fieldset class="actions">
+            <%= f.submit "POST", class: "submit" %>
+          </fieldset>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
-<!-- End of New Comment Modal -->
+  <!-- End of New Comment Modal -->
 
-  </div>
   <!-- List of all the comments -->
   <div class="post-container" id="overflow">
     <% @comments.reverse.each do |c| %>
-    <div class="post"><h4><span><%= c.user.name %></span></h4><div class="pcontent">"<%= c.text %>"<sub class="time">
+    <div class="post">
+      <h4><span><%= c.user.name %></span></h4>
+      <div class="pcontent">"<%= c.text %>"<sub class="time">
       <!-- Edit link (only shown if you are the user that created it) -->
-      <%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></sub></div><%= c.created_at.strftime("%I:%M%p, %b %d 20%y ") %></div>
+      <%= link_to "Edit", edit_comment_path(c) if (current_user == c.user) %></sub>
+      </div>
+    <%= c.created_at.strftime("%I:%M%p, %b %d 20%y ") %>
+    </div>
     <% end %>
   </div>
 </div>
