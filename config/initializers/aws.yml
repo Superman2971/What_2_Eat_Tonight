@@ -1,9 +1,9 @@
 development:
-  access_key_id: "AKIAJ3T7F5UGSZFIXPFQ"
-  secret_access_key: "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"
+  access_key_id: "DELETED"
+  secret_access_key: "DELETED"
   simple_db_consistent_reads: false
 
 production:
-  access_key_id: "AKIAJ3T7F5UGSZFIXPFQ"
-  secret_access_key: "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"
+  access_key_id: "DELETED"
+  secret_access_key: "DELETED"
   simple_db_consistent_reads: true
