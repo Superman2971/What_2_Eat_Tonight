@@ -3,6 +3,20 @@
 <div class="col-sm-6 col-sm-offset-3">
 
 <%= form_for @user,:url => users_update_path, html:{class: "well well-lg"} do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited your registration:
+      </h2>
+
+      <ul class="list-group">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="list-group-item list-group-item-danger"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   
   <h1>PASSWORD CHANGE for: <%=@user.name%></h1>
 
