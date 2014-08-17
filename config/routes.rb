@@ -2,14 +2,12 @@ What2EatTonight::Application.routes.draw do
   
   resource :session, only: [:new, :create, :destroy]
 
-  get "users/" => "users#index", as: :users
+  get "users/" => "users#index", as: :user
   get "users/new" => "users#new", as: :new_user
   post "users" => "users#create"
-  get "users/edit" => "users#edit"
-  post "users/update" => "users#update"
+  get "users/edit/:id" => "users#edit", as: :users_edit
+  patch "users/:id" => "users#update", as: :users_update
   post "users/show" => "users#show"
-
-  get "session/forgot" => "sessions#forgot", as: :forgot
 
   resources :comments
 
@@ -19,10 +17,6 @@ What2EatTonight::Application.routes.draw do
   get "yelp/yelp" => "yelp#yelp", as: :data # No longer need, Yelp sucks
 
   root "images#index"
-
-  #Mailer Stuff
-  match '/contacts', to: 'contacts#new', via: 'get'
-  resources "contacts", only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,9 +1,0 @@
-development:
-  access_key_id: "DELETE_FROM_GITHUB_FOR_SAFETY"
-  secret_access_key: "DELETE_FROM_GITHUB_FOR_SAFETY"
-  simple_db_consistent_reads: false
-
-production:
-  access_key_id: "DELETE_FROM_GITHUB_FOR_SAFETY"
-  secret_access_key: "DELETE_FROM_GITHUB_FOR_SAFETY"
-  simple_db_consistent_reads: true

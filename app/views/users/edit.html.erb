@@ -2,30 +2,34 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-<%= form_for @user, html:{class: "well well-lg"} do |f| %>
+<%= form_for @user,:url => users_update_path, html:{class: "well well-lg"} do |f| %>
 
-  <!-- NAME FIELD -->
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <%= f.text_field :name, class: "form-control input-lg", value: f.name %>
-  </div>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited your registration:
+      </h2>
 
-  <!-- EMAIL FIELD -->
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.text_field :email, class: "form-control input-lg", value: f.email %>
-  </div>
+      <ul class="list-group">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="list-group-item list-group-item-danger"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <h1>PASSWORD CHANGE for: <%=@user.name%></h1>
 
   <!-- PASSWORD FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.password_field :password, class: "form-control input-lg", placeholder: "New Password Here..." %>
+      <%= f.password_field :password, required:true, class: "form-control input-lg", placeholder: "New Password Here..." %>
   </div>
 
   <!-- PASSWORD CONFIRMATION FIELD -->
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-      <%= f.password_field :password_confirmation, class: "form-control input-lg", placeholder: "New Password Confirmation..." %>
+      <%= f.password_field :password_confirmation, required:true, class: "form-control input-lg", placeholder: "New Password Confirmation..." %>
   </div>
 
   <!-- SUBMIT BUTTON -->
