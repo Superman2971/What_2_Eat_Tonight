@@ -32,10 +32,4 @@ class ImagesController < ApplicationController
     redirect_to root_path
   end
 
-  def email
-    @current_user = current_user
-    # Tell the UserMailer to send email linking to edit password page
-    UserMailer.email_location(@current_user).deliver
-    redirect_to root_path
-  end
 end
