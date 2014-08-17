@@ -25,29 +25,17 @@ class ImagesController < ApplicationController
     end
   end
 
-  def edit
-    if !current_user
-      redirect_to root_path
-      return
-    end
-    @image = Image.find(params[:id])
+  def show
+    @current_user = current_user
+    # Tell the UserMailer to send email linking to edit password page
+    UserMailer.email_location(@current_user).deliver
+    redirect_to root_path
   end
 
-  def update
-    if !current_user
-      redirect_to home_path
-      return
-    end
-    @image = Image.find(params[:id])
-    if @image.update_attributes(params.require(:comment).permit(:text))
-      redirect_to new_comment_path
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    Comment.find(params[:id]).destroy
-    redirect_to new_comment_path
+  def email
+    @current_user = current_user
+    # Tell the UserMailer to send email linking to edit password page
+    UserMailer.email_location(@current_user).deliver
+    redirect_to root_path
   end
 end

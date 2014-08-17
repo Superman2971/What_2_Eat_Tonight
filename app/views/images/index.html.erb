@@ -30,7 +30,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Fuck this Food</button>
-        <button type="button" class="btn btn-primary">Email me Location</button>
+        <button type="button" class="btn btn-primary"><%= link_to "Email me Location", email_path, method: :get if current_user%></button>
       </div>
     </div>
   </div>
