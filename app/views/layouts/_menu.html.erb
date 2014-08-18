@@ -4,15 +4,15 @@
         <%= link_to image_tag("WE2T_logo.png", class: "logo"), root_path, method: :get %>
         <h1>MENU</h1>
           <p><%= "Welcome, #{current_user.name}!" if current_user%></p>
-          <p><%=link_to "Log in", new_session_path if !current_user%></p>
-          <p><%=link_to "Register", new_user_path if !current_user%></p>
-          <p><%= link_to "Logout", session_path, method: :delete if current_user%></p>
+          <p><%=link_to "Log in", new_session_path, class: "btn btn-primary" if !current_user%></p>
+          <p><%=link_to "Register", new_user_path, class: "btn btn-warning" if !current_user%></p>
+          <p><%= link_to "Logout", session_path, class: "btn btn-danger", method: :delete if current_user%></p>
           </br>
           <p><%= "Why register today?" if !current_user %></p>
           <p><%= "Access to our Comments Gallery!" if !current_user %></p>
           <p><%= "Ability to add your own restaurant food pics!" if !current_user %></p>
-          <h2><%= link_to "Add an New Image to Our Site", new_images_path if current_user%></h2>
-          <h2><%= link_to "Comments Gallery", new_comment_path if current_user%></h2>
+          <h2><%= link_to "Add an New Image", new_images_path, class: "btn btn-success" if current_user%></h2>
+          <h2><%= link_to "Comments Gallery", new_comment_path, class: "btn btn-info" if current_user%></h2>
       </div>
       <div class="col-xs-3 menu-hover">
       </br>
