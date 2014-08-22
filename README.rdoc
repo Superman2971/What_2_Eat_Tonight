@@ -1,6 +1,6 @@
-# What 2 Eat Tonight
+= What 2 Eat Tonight
 ==================
-**The visual decision for the craving you can't describe**
+<b>The visual decision for the craving you can't describe</b>
 
 Based upon a real problem I have, this application was designed to easily help me select the kind of food I really was hungry for at those times when you just can't decide. Visuals are much more stimulating when it comes to food selection.
 ------------
@@ -8,24 +8,24 @@ Based upon a real problem I have, this application was designed to easily help m
 * AngularJS
 * Twitter Bootstrap
 
-![](http://s7.postimg.org/l916fa4yz/Screen_Shot_2014_08_21_at_11_47_13_PM.png)
+http://s7.postimg.org/l916fa4yz/Screen_Shot_2014_08_21_at_11_47_13_PM.png
 
 * Custom User Authentication
 * Unique (not Bootstrap) Nav
 * CSS transition and animations
 
-![](http://s29.postimg.org/4v3kv6yo7/Screen_Shot_2014_08_21_at_11_46_45_PM.png)
+http://s29.postimg.org/4v3kv6yo7/Screen_Shot_2014_08_21_at_11_46_45_PM.png
 
 * Full screen randomized food options
 * Modal information/animation upon interaction
 * Google Maps location services
 * Action Mailer welcome email and location delivery system
 
-![](http://s24.postimg.org/k09mcg9it/Screen_Shot_2014_08_21_at_11_57_40_PM.png)
+http://s24.postimg.org/k09mcg9it/Screen_Shot_2014_08_21_at_11_57_40_PM.png
 
-[Live Site Demo](http://w2et.herokuapp.com/)
+==Live Site Demo: http://w2et.herokuapp.com/
 
-*Other notes: during the development process I integrated the Yelp API (but images are maximum of 100x100 pixels), then the Google Places API (but only 1 image per location provided, which was generally the store front and not the food), and a web scraper was developed to pull data from Yelp which worked but Yelp's AJAX limited information pulls to the first page of search results*
+<em>Other notes: during the development process I integrated the Yelp API (but images are maximum of 100x100 pixels), then the Google Places API (but only 1 image per location provided, which was generally the store front and not the food), and a web scraper was developed to pull data from Yelp which worked but Yelp's AJAX limited information pulls to the first page of search results</em>
 
 -------------
 Please review and feel free to use this open source code as best suits your personal projects.
